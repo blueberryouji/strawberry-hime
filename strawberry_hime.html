@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Strawberry Hime 🍓</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh; overflow:hidden;
+  font-family:Georgia,serif; color:white; text-align:center;
+  background:radial-gradient(circle at 50% 20%,#30245c 0,#171433 45%,#09081b 100%);
+}
+.stars,.hearts{position:fixed;inset:0;pointer-events:none}
+.star{position:absolute;width:3px;height:3px;background:white;border-radius:50%;animation:twinkle 2s infinite alternate}
+@keyframes twinkle{to{opacity:.25;transform:scale(.6)}}
+.heart{position:absolute;font-size:20px;animation:float 7s linear infinite;opacity:.7}
+@keyframes float{from{transform:translateY(110vh) rotate(0);opacity:0}15%{opacity:.8}to{transform:translateY(-15vh) rotate(25deg);opacity:0}}
+.screen{position:relative;z-index:2;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:22px}
+.card{
+  width:min(92vw,520px); padding:32px 24px; border-radius:28px;
+  background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.22);
+  box-shadow:0 20px 60px rgba(0,0,0,.35); backdrop-filter:blur(10px);
+}
+h1{font-size:34px;margin:0 0 12px}
+p{font-size:18px;line-height:1.65}
+button{
+  border:0;border-radius:999px;padding:14px 24px;margin-top:15px;
+  font-size:17px;font-weight:bold;cursor:pointer;background:#fff;color:#6d477f;
+}
+.hidden{display:none}
+.letter{animation:appear .7s ease}
+@keyframes appear{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+.gift{font-size:85px;cursor:pointer;animation:bounce 1.6s infinite}
+@keyframes bounce{50%{transform:translateY(-8px)}}
+.small{font-size:14px;opacity:.75}
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+<div class="hearts" id="hearts"></div>
+
+<div class="screen">
+  <div class="card" id="welcome">
+    <div style="font-size:55px">🍓🫐</div>
+    <h1>For my Strawberry Hime</h1>
+    <p>From your blueberry 💙</p>
+    <p>I've made a tiny little place on the internet just for you...</p>
+    <button onclick="openLetter()">💌 Open this</button>
+  </div>
+
+  <div class="card hidden letter" id="letter">
+    <div style="font-size:45px">🌙✨</div>
+    <h1>A little something for you</h1>
+    <p>
+      I really like the way you treat me so kindly.<br>
+      I like how you always listen when I talk.<br>
+      And I love the sweet way you talk to me. 💗
+    </p>
+    <p>
+      One memory I'll always keep is when we watched
+      <i>You and I Are Polar Opposites</i> together —
+      separately, but at the same time. 🌸
+    </p>
+    <p>
+      Even though we're online friends and miles apart,
+      that little moment still felt special.
+    </p>
+    <button onclick="showGift()">🎁 There's one more thing...</button>
+  </div>
+
+  <div class="card hidden letter" id="gift">
+    <div class="gift" onclick="openGift()">🎁</div>
+    <h1>One last surprise</h1>
+    <p>Tap the gift box 🫐</p>
+    <p class="small">It's just a tiny gift from your blueberry.</p>
+  </div>
+
+  <div class="card hidden letter" id="final">
+    <div style="font-size:65px">💗✨🍓🫐✨💗</div>
+    <h1>For Strawberry Hime</h1>
+    <p>
+      Thank you for being you.<br>
+      I'm really glad our random chat brought us together.
+    </p>
+    <p>
+      No matter how far away we are,<br>
+      I'm happy that I got to meet you. 🌙
+    </p>
+    <p><b>— Your blueberry 🫐</b></p>
+  </div>
+</div>
+
+<script>
+for(let i=0;i<90;i++){
+  const s=document.createElement('div'); s.className='star';
+  s.style.left=Math.random()*100+'vw';
+  s.style.top=Math.random()*100+'vh';
+  s.style.animationDelay=Math.random()*2+'s';
+  document.getElementById('stars').appendChild(s);
+}
+for(let i=0;i<14;i++){
+  const h=document.createElement('div'); h.className='heart'; h.textContent='💗';
+  h.style.left=Math.random()*100+'vw';
+  h.style.animationDelay=Math.random()*7+'s';
+  h.style.animationDuration=(5+Math.random()*5)+'s';
+  document.getElementById('hearts').appendChild(h);
+}
+function hideAll(){['welcome','letter','gift','final'].forEach(id=>document.getElementById(id).classList.add('hidden'))}
+function openLetter(){hideAll();document.getElementById('letter').classList.remove('hidden')}
+function showGift(){hideAll();document.getElementById('gift').classList.remove('hidden')}
+function openGift(){hideAll();document.getElementById('final').classList.remove('hidden')}
+</script>
+</body>
+</html>
