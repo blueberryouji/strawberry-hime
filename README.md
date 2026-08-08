@@ -1,2 +1,0 @@
-# strawberry-hime
-For her
