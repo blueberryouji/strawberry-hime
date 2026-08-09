@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Strawberry Hime 💗</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Trebuchet MS",Arial,sans-serif;background:linear-gradient(135deg,#fff0f7,#ffe4ef,#fff7fb);color:#5c3045;overflow-x:hidden}
+.section{min-height:100vh;padding:70px 22px;display:flex;align-items:center;justify-content:center;position:relative}
+.card{width:min(700px,94%);padding:38px 25px;border-radius:30px;background:rgba(255,255,255,.78);box-shadow:0 15px 45px rgba(170,70,120,.18);text-align:center;backdrop-filter:blur(8px);animation:appear 1s ease}
+h1{font-size:clamp(35px,9vw,65px);margin:10px 0 20px}
+h2{font-size:clamp(28px,7vw,45px);margin-bottom:20px}
+p{font-size:18px;line-height:1.8}
+.small{font-size:14px;opacity:.7}
+button{border:none;border-radius:999px;padding:14px 24px;margin:8px;font-size:16px;font-weight:bold;cursor:pointer;background:#ff75a8;color:white;box-shadow:0 7px 18px rgba(255,90,150,.25);transition:.25s}
+button:hover{transform:translateY(-3px) scale(1.03)}
+button:active{transform:scale(.96)}
+.heart{position:fixed;pointer-events:none;animation:floatUp 5s linear forwards;z-index:20}
+.memory{margin:18px 0;padding:20px;border-radius:22px;background:rgba(255,220,235,.65);text-align:left}
+.memory strong{display:block;font-size:20px;margin-bottom:8px}
+.reveal{display:none;margin-top:20px;padding:20px;border-radius:20px;background:#fff0f7;animation:appear .6s ease}
+.emoji{font-size:65px}
+#noBtn{position:relative}
+.finalText{font-size:21px;font-weight:bold}
+@keyframes floatUp{0%{transform:translateY(0) scale(.7) rotate(0deg);opacity:1}100%{transform:translateY(-110vh) scale(1.4) rotate(25deg);opacity:0}}
+@keyframes appear{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{50%{transform:scale(1.08)}}
+.pulse{animation:pulse 1.5s infinite}
+.scrollHint{position:absolute;bottom:25px;opacity:.65;font-size:14px}
+</style>
+</head>
+<body>
+
+<section class="section">
+<div class="card">
+<div class="emoji pulse">🍓</div>
+<h1>Hey, Strawberry Hime 💗</h1>
+<p>I made this little corner of the internet just for you. It's not some huge expensive gift, and it doesn't need to be. I just wanted to make something that you could open and remember that someone thought about you.</p>
+<p>Sooo... ready? 👀</p>
+<button onclick="nextSection(2)">Open it 💗</button>
+</div>
+<div class="scrollHint">There are 11 little sections waiting ↓</div>
+</section>
+
+<section class="section" id="section2">
+<div class="card">
+<div class="emoji">🌸</div>
+<h2>A Little Beginning</h2>
+<p>It's kinda funny how people can meet randomly and somehow become important to each other.</p>
+<p>Out of all the people we could have met, somehow our paths crossed.</p>
+<p>And honestly, I'm glad they did.</p>
+<button onclick="reveal('beginning')">Tell me more 👀</button>
+<div class="reveal" id="beginning"><p>Maybe our friendship started in a completely ordinary way, but the memories that came after weren't ordinary to me. 💗</p></div>
+<br><button onclick="nextSection(3)">Next 🌷</button>
+</div>
+</section>
+
+<section class="section" id="section3">
+<div class="card">
+<div class="emoji">🐱</div>
+<h2>The Strawberry Hime</h2>
+<p>And then there was your nickname...</p>
+<p><b>Strawberry Hime.</b> 🍓👑</p>
+<p>Somehow it just stuck in my head. It sounds cute, slightly ridiculous, and somehow completely you.</p>
+<div class="memory"><strong>🍓 Official title</strong>Strawberry Hime — certified internet princess.</div>
+<button onclick="createHearts()">Summon the strawberries 🍓</button>
+<br><button onclick="nextSection(4)">Continue 💕</button>
+</div>
+</section>
+
+<section class="section" id="section4">
+<div class="card">
+<div class="emoji">📖</div>
+<h2>Some Little Memories</h2>
+<p>It's the little things that stay in your head sometimes.</p>
+<div class="memory"><strong>🌸 The random conversations</strong>The completely random topics that somehow turn into conversations that last way longer than expected.</div>
+<div class="memory"><strong>🐱 The cute stuff</strong>The little things you like, especially your love for cats.</div>
+<div class="memory"><strong>💗 The moments</strong>Even simple conversations can become memories when they're with the right person.</div>
+<button onclick="nextSection(5)">I remember... 💭</button>
+</div>
+</section>
+
+<section class="section" id="section5">
+<div class="card">
+<div class="emoji">📺</div>
+<h2>That One Memory</h2>
+<p>Okay, this one deserves its own section.</p>
+<div class="memory">
+<strong>🎬 You and I Are Polar Opposites</strong>
+<p>Remember when we watched <b>You and I Are Polar Opposites</b>?</p>
+<p>It's one of those little memories that might look completely normal from the outside... but I still remember it because we experienced it together.</p>
+</div>
+<button onclick="reveal('polar')">Memory unlocked 🔓</button>
+<div class="reveal" id="polar"><p>Sometimes the smallest shared moments become the ones you randomly remember later and smile about. 🌸</p></div>
+<br><button onclick="nextSection(6)">Next memory 💗</button>
+</div>
+</section>
+
+<section class="section" id="section6">
+<div class="card">
+<div class="emoji">✨</div>
+<h2>Why You Are Special</h2>
+<p>I don't think someone has to do something enormous to become special.</p>
+<p>Sometimes it's just the way they talk. The way they make conversations feel easier. The way they can make an ordinary day a little less ordinary.</p>
+<p>And that's something I appreciate about you.</p>
+<button onclick="reveal('special')">One more thing...</button>
+<div class="reveal" id="special"><p class="finalText">You don't have to try to be special. You already became special by simply being yourself. 💗</p></div>
+<br><button onclick="nextSection(7)">Continue 🌷</button>
+</div>
+</section>
+
+<section class="section" id="section7">
+<div class="card">
+<div class="emoji">🎁</div>
+<h2>A Tiny Gift</h2>
+<p>Okay, technically this entire website is the gift... but there's another little surprise.</p>
+<button onclick="openGift()">🎀 Open the gift</button>
+<div class="reveal" id="gift">
+<div style="font-size:70px;">🎁</div>
+<h2>Surprise! 💗</h2>
+<p>There isn't anything expensive inside.</p>
+<p>Just a reminder that somewhere out there, someone decided that you deserved a little happiness today.</p>
+</div>
+<br><button onclick="nextSection(8)">Keep going 👀</button>
+</div>
+</section>
+
+<section class="section" id="section8">
+<div class="card">
+<div class="emoji">🌙</div>
+<h2>If You Ever Have A Bad Day</h2>
+<p>If you're having one of those days where everything feels annoying, exhausting, or just plain bad...</p>
+<p>take a breath.</p>
+<p>You don't have to solve everything immediately. You don't have to pretend you're perfectly okay.</p>
+<p>Just remember that bad days are only days. They aren't the whole story.</p>
+<button onclick="createHearts()">A little happiness 💕</button>
+<br><button onclick="nextSection(9)">Next 🌸</button>
+</div>
+</section>
+
+<section class="section" id="section9">
+<div class="card">
+<div class="emoji">💌</div>
+<h2>A Message For You</h2>
+<p>I don't know where life will take us, or how many new people we'll meet, or how many new memories we'll make.</p>
+<p>But I'm genuinely happy that our story has the memories it has right now.</p>
+<p>The random conversations. The jokes. The little moments. The things we've watched. The memories that probably wouldn't mean much to anyone else.</p>
+<p class="finalText">They mean something to me. 💗</p>
+<button onclick="nextSection(10)">One last part... 👀</button>
+</div>
+</section>
+
+<section class="section" id="section10">
+<div class="card">
+<div class="emoji">🌷</div>
+<h2>Before You Go...</h2>
+<p>I wanted to say something simple.</p>
+<p class="finalText">Thank you.</p>
+<p>Thank you for the conversations, the memories, the laughs, and for simply being someone I got lucky enough to meet.</p>
+<p>I hope this little website made you smile, even if it was just for a few seconds.</p>
+<button onclick="nextSection(11)">Final surprise 💗</button>
+</div>
+</section>
+
+<section class="section" id="section11">
+<div class="card">
+<div class="emoji pulse">💗</div>
+<h1>One Last Question...</h1>
+<p>After everything in this tiny website...</p>
+<p class="finalText">Do you love me forever? 👀💗</p>
+<button onclick="yesAnswer()">YES 💗</button>
+<button id="noBtn" onclick="noAnswer()">NO 🙈</button>
+<div class="reveal" id="yesMessage">
+<div style="font-size:65px;">💞</div>
+<h2>YAYYY 😭💗</h2>
+<p>Okay, I'm saving this moment forever.</p>
+<p class="finalText">Strawberry Hime + this ridiculous little website = one very happy memory. 🍓</p>
+<p>Thank you for making it all the way here. 🌸</p>
+</div>
+<div class="reveal" id="noMessage">
+<p>The NO button has mysteriously disappeared... 👀</p>
+<p>Seems like you'll have to reconsider. 😂💗</p>
+</div>
+</div>
+</section>
+
+<script>
+function nextSection(number){
+const section=document.getElementById("section"+number);
+if(section) section.scrollIntoView({behavior:"smooth"});
+}
+function reveal(id){
+const element=document.getElementById(id);
+if(element) element.style.display="block";
+}
+function openGift(){
+document.getElementById("gift").style.display="block";
+createHearts();
+}
+function createHearts(){
+const symbols=["💗","💕","💖","💓","💞","🌸","🍓"];
+for(let i=0;i<18;i++){
+const heart=document.createElement("div");
+heart.className="heart";
+heart.innerText=symbols[Math.floor(Math.random()*symbols.length)];
+heart.style.left=Math.random()*100+"vw";
+heart.style.bottom="-30px";
+heart.style.fontSize=(18+Math.random()*25)+"px";
+heart.style.animationDuration=(3+Math.random()*3)+"s";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),6500);
+}
+}
+function yesAnswer(){
+document.getElementById("yesMessage").style.display="block";
+document.getElementById("noMessage").style.display="none";
+createHearts();
+setTimeout(createHearts,1000);
+setTimeout(createHearts,2000);
+}
+function noAnswer(){
+const noButton=document.getElementById("noBtn");
+document.getElementById("noMessage").style.display="block";
+noButton.style.transform="scale(0.1)";
+noButton.style.opacity="0";
+setTimeout(()=>{noButton.style.display="none";},500);
+}
+window.addEventListener("load",()=>{
+setTimeout(()=>createHearts(),1200);
+});
+</script>
+</body>
+</html>
